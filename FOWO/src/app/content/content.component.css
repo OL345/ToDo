@@ -1,0 +1,10 @@
+div{
+border: 20px red;
+border-radius: 5px;
+color: black;
+width: auto;
+background-color:cadetblues;
+padding: 2%;
+margin: 5px;
+display: inline-block;
+}

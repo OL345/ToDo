@@ -1,0 +1,9 @@
+<form [formGroup]="taskForm">
+  <div class="textboxes">
+    <label for="title">Title:</label>
+    <input type="text" id="title" formControlName="title">
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <button type="submit" (click)="addTodo()" routerLink="/" routerLinkActive="active">Submit</button>
+</form>

@@ -1,0 +1,17 @@
+<div class="task-container">
+    <div class="task-details">
+      <ul>
+        <li>
+          <h2><b>{{ input_data.title }}</b></h2>
+        </li>
+        <li>
+          <p>{{ input_data.description }}</p>
+        </li>
+      </ul>
+      <button *ngIf="!input_data" class="button done"><mat-icon>check</mat-icon></button>
+      <button *ngIf="input_data" class="button"><mat-icon>close</mat-icon></button>
+      <button class="button edit" routerLink="/edit" routerLinkActive="active"><mat-icon>edit</mat-icon></button>
+      <button class="button delete" (click)="deleteTask(input_data.id)" routerLink="/" routerLinkActive="active"><mat-icon>delete</mat-icon></button>
+    </div>
+  </div>
+  
