@@ -9,5 +9,9 @@ This app allows you to create Tasks. The Frontend is Angular and the backend is 
   - Still has issues:
     - Site does not refetch data after. Site needs to be refreshed
 
-  # Edit
-    . Shoud edit the Title and the Description of a Task but does not do anything yet
+# Edit
+  - Shoud edit the Title and the Description of a Task but does not do anything yet
+
+# Start Server
+   - start Backend with npm start run on http://localhost:3000/
+   - start Frontend with ng serve on http://localhost:4200/
