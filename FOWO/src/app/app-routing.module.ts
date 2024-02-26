@@ -7,8 +7,8 @@ import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
   {path: 'add', component: AddComponent},
-  {path: '', component: ContentComponent},
-  {path: 'edit', component: DetailComponent},
+  {path: '', component: ContentComponent},  
+  { path: 'edit/:id', component: DetailComponent },
   
 ];
 

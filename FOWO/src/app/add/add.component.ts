@@ -20,23 +20,18 @@ export class AddComponent {
   constructor(private httpClient: HttpClient, private router: Router) {}
 
   addTodo() {
-    // Get values from the form
     const titleValue = this.taskForm.value.title as string; // Explicitly cast to string
     const descriptionValue = this.taskForm.value.description as string; // Explicitly cast to string
   
-    // Ensure the values are not null or undefined before assigning
     if (titleValue !== null && titleValue !== undefined) {
       this.newTodo.title = titleValue;
     }
     if (descriptionValue !== null && descriptionValue !== undefined) {
       this.newTodo.description = descriptionValue;
     }
-  
-    // Make a POST request to add a new todo
     this.httpClient.post<any>('http://localhost:3000/add-todo', this.newTodo).subscribe(
       (response) => {
         console.log('New Todo added successfully!', response);
-        // Redirect to the home page after successful addition
         this.router.navigateByUrl('/');
       },
       (error) => {
