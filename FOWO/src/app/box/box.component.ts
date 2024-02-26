@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { getLocaleEraNames } from '@angular/common';
 import { termin } from '../interfaces/termin';
 import { DataService } from '../services/data.service';
 import { HttpClient } from '@angular/common/http';

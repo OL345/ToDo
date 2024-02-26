@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { termin } from '../interfaces/termin';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
+import { termin } from '../interfaces/termin';
 
 @Component({
   selector: 'app-detail',
@@ -10,42 +10,39 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent {
-  @Input() input_data!: termin;
-
-  constructor(private http: HttpClient, private router: Router) {}
+  @Input() editTodo!: termin;
 
   taskForm = new FormGroup({
     title: new FormControl(''),
     description: new FormControl('')
   });
 
-  editTodo: termin = { id: 0, title: '', description: '' };
+  constructor(private http: HttpClient, private router: Router) {}
 
-  editTask(taskId: number, updatedTask: any): void {
+  editTask(): void {
+    if (!this.editTodo) {
+      console.error('editTodo is undefined');
+      return;
+    }
 
+    const titleValue = this.taskForm.get('title')?.value as string;
+    const descriptionValue = this.taskForm.get('description')?.value as string;
 
-    const titleValue = this.taskForm.value.title as string;
-    const descriptionValue = this.taskForm.value.description as string;
-    
-    console.log(taskId)
-    console.log(titleValue)
-    console.log(descriptionValue)
-    
-    this.http.put(`http://localhost:3000/edit/${taskId}`, updatedTask).subscribe(
-      () => {
-        if (titleValue !== null && titleValue !== undefined) {
-          this.editTodo.title = titleValue;
+    const updatedTask: termin = {
+      id: this.editTodo.id,
+      title: titleValue,
+      description: descriptionValue
+    };
+
+    this.http.put(`http://localhost:3000/tasks/${this.editTodo.id}`, updatedTask)
+      .subscribe(
+        () => {
+          console.log(`Task with ID ${this.editTodo.id} updated successfully.`);
+          this.router.navigateByUrl('/');
+        },
+        (error) => {
+          console.error('Error updating task:', error);
         }
-        if (descriptionValue !== null && descriptionValue !== undefined) {
-          this.editTodo.description = descriptionValue;
-        }
-        console.log(`Task with ID ${taskId} updated successfully.`);
-        this.router.navigateByUrl('/');
-      },
-      (error) => {
-        console.error('Error updating task:', error);
-      }
-    );
+      );
   }
-  
 }

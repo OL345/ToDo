@@ -1,5 +1,6 @@
 <div>
-  <form [formGroup]="taskForm" (ngSubmit)="editTask(editTodo.id, this.editTodo)">
+  <form [formGroup]="taskForm">
+
     <div>
       <label for="title">Title:</label>
       <input type="text" id="title" formControlName="title">
@@ -8,6 +9,7 @@
       <label for="description">Description:</label>
       <textarea id="description" formControlName="description"></textarea>
     </div>
-    <button type="submit" routerLink="/" routerLinkActive="active">Save Changes</button>
+
+    <button type="submit" (click) = "editTask()">Save Changes</button>
   </form>
 </div>
