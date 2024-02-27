@@ -8,11 +8,11 @@
           <p>{{ input_data.description }}</p>
         </li>
       </ul>
-      <button *ngIf="!input_data" class="button done"><mat-icon>check</mat-icon></button>
-      <button *ngIf="input_data" class="button"><mat-icon>close</mat-icon></button><button class="button edit" [routerLink]="['/edit', input_data.id]" routerLinkActive="active"><mat-icon>edit</mat-icon>      </button>
-      <button class="button delete" (click)="deleteTask(input_data.id)" routerLink="/" routerLinkActive="active"><mat-icon>delete</mat-icon></button>
-      <button (click)="onEditButtonClick()">Edit Task</button>
-
+      <button *ngIf="input_data" class="button done"><mat-icon>check</mat-icon></button>
+      <button class="button edit" (click) = "openUpdateDialog()" routerLinkActive="active">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button class="button delete" (click)="openDeleteDialog()" routerLink="/" routerLinkActive="active"><mat-icon>delete</mat-icon></button>
     </div>
   </div>
   

@@ -1,0 +1,19 @@
+<div class="update-task-dialog">
+    <h1 class="mat-dialog-title">Update Task</h1>
+    <div class="mat-dialog-content">
+      <form [formGroup]="taskForm">
+        <mat-form-field class="task-title">
+          <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="task-description">
+          <textarea matInput placeholder="Description" formControlName="description"></textarea>
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="mat-dialog-actions">
+      <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
+      <button class="update-button" routerLink="/" routerLinkActive="active"  [mat-dialog-close]="taskForm.value" [disabled]="taskForm.invalid"><mat-icon>update</mat-icon></button>
+    
+    </div>
+  </div>
+  

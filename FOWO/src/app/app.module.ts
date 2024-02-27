@@ -20,7 +20,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateTaskDialogComponent } from './update-task-dialog/update-task-dialog.component';
+import { DeleteTaskDialogComponent } from './delete-task-dialog/delete-task-dialog.component';  
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     BoxComponent,
     ContentComponent,
     AddComponent,
-    DetailComponent
+    DetailComponent,
+    UpdateTaskDialogComponent,
+    DeleteTaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -47,8 +52,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     HttpClientModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    
- 
+    MatDialogModule,
+     
   ],
   providers: [
     // No need to provide anything here

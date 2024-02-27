@@ -17,23 +17,6 @@ export class DataService {
     return this.httpClient.get<termin[]>('http://localhost:3000/tasks')
   }
 
-  fetchData() {
-    fetch('http://localhost:3000/tasks')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data: termin[]) => {
-        console.log('Data received:', data);
-        this._tasks = data;
-      })
-      .catch((error) => {
-        console.error('Fetch error:', error);
-      });
-  }
-
   getData(): termin[] {
     return this._tasks;
   }
@@ -43,7 +26,7 @@ export class DataService {
   }
 
   deleteTask(taskId: number): Observable<any> {
-    const url = `http://localhost:3000/delete-todo/${taskId}`; // Adjust the URL as needed
+    const url = `http://localhost:3000/delete-todo/${taskId}`;
     return this.httpClient.delete(url);
   }
   
