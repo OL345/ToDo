@@ -23,7 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateTaskDialogComponent } from './update-task-dialog/update-task-dialog.component';
-import { DeleteTaskDialogComponent } from './delete-task-dialog/delete-task-dialog.component';  
+import { DeleteTaskDialogComponent } from './delete-task-dialog/delete-task-dialog.component';
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { DeleteTaskDialogComponent } from './delete-task-dialog/delete-task-dial
     AddComponent,
     DetailComponent,
     UpdateTaskDialogComponent,
-    DeleteTaskDialogComponent
+    DeleteTaskDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +53,6 @@ import { DeleteTaskDialogComponent } from './delete-task-dialog/delete-task-dial
     ReactiveFormsModule,
     MatSnackBarModule,
     MatDialogModule,
-     
   ],
   providers: [
     // No need to provide anything here
