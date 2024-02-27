@@ -31,7 +31,8 @@ export class DetailComponent {
     const updatedTask: termin = {
       id: this.editTodo.id,
       title: titleValue,
-      description: descriptionValue
+      description: descriptionValue,
+      done: false
     };
     
     console.log(this.editTodo.id);

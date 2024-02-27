@@ -20,6 +20,7 @@ export class BoxComponent {
 
   @Output() updatedData = new EventEmitter();
   @Output() deletedData = new EventEmitter();
+  @Output() markedData = new EventEmitter();
 
   constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService, private snackBar: MatSnackBar,) {}
   
@@ -34,7 +35,8 @@ export class BoxComponent {
         const updatedTask: termin = {
           id: this.input_data.id,
           title: updatedData.title,
-          description: updatedData.description
+          description: updatedData.description,
+          done: false,
         };
 
         this.http.put(`http://localhost:3000/edit/${this.input_data.id}`, updatedTask)
@@ -70,5 +72,18 @@ export class BoxComponent {
       }
     });
   }  
- 
+
+  mark_as_done(taskId: number): void {
+    const url = `http://localhost:3000/mark-as-done/${taskId}`;
+    this.http.put<void>(url, {}).subscribe(
+      () => {
+        console.log(`Task with ID ${taskId} marked as done successfully.`);
+        // Optionally, perform any action after marking the task as done
+        this.markedData.emit();
+      },
+      error => {
+        console.error('Error marking task as done:', error);
+      }
+    );
+  }
 }

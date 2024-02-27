@@ -1,4 +1,4 @@
 <div class="kurse">
-    <app-box *ngFor="let termin of termine$ | async" [input_data]="termin" (updatedData)="fetchData()" (deletedData)="fetchData()"></app-box>
+    <app-box *ngFor="let termin of termine$ | async" [input_data]="termin" (markedData)="fetchData()" (updatedData)="fetchData()" (deletedData)="fetchData()"></app-box>
   </div>
   

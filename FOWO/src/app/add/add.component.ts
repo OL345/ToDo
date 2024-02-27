@@ -10,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent {
-  newTodo: termin = { id: 0, title: '', description: '' };
+  newTodo: termin = { id: 0, title: '', description: '', done: false };
 
   taskForm = new FormGroup({
     title: new FormControl(''),

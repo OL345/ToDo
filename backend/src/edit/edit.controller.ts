@@ -9,7 +9,7 @@ export class EditController {
   private readonly tasksFilePath = 'tasks.json';
 
   @Put(':id')
-  editTask(@Param('id') taskId: string, @Body() updatedTask: Partial<termin>): void {
+  editTask(@Param('id') taskId: number, @Body() updatedTask: Partial<termin>): void {
     try {
       let tasks: termin[] = [];
       if (fs.existsSync(this.tasksFilePath)) {

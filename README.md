@@ -7,17 +7,17 @@ This app allows you to create Tasks. The Frontend is Angular and the backend is 
 ## Delete Function  
   - Removes a Task from the .JSON file
   - Still has issues:
-    - Site does not refetch data after. Site needs to be refreshed
     - doesn`t set the ids back
 
 ## Edit
   - Edits the Title and Description of the Task
   - Is managed with a dialog rather than a separate subsite
-  - Issues: 
-    - Does not reload data; Site needs to be refreshed so changes are displayed
 
+## Mark Done
+  - Marks a task as done
+  - Issues: 
+    - doesn´t show if it is done or not
 ## Start Server
    - start Backend with npm start run on http://localhost:3000/
    - start Frontend with ng serve on http://localhost:4200/
-
 
