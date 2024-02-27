@@ -18,4 +18,8 @@ export class ContentComponent {
 
     this.termine$ =_data.fetchData2();
   }
+
+  public fetchData() {
+    this.termine$ = this._data.fetchData2();
+  }
 }

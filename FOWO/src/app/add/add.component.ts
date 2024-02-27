@@ -29,6 +29,7 @@ export class AddComponent {
     if (descriptionValue !== null && descriptionValue !== undefined) {
       this.newTodo.description = descriptionValue;
     }
+    
     this.httpClient.post<any>('http://localhost:3000/add-todo', this.newTodo).subscribe(
       (response) => {
         console.log('New Todo added successfully!', response);

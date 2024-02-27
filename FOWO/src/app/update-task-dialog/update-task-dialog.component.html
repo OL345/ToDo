@@ -12,7 +12,8 @@
     </div>
     <div class="mat-dialog-actions">
       <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
-      <button class="update-button" routerLink="/" routerLinkActive="active"  [mat-dialog-close]="taskForm.value" [disabled]="taskForm.invalid"><mat-icon>update</mat-icon></button>
+      <button mat-button class="update-button" [mat-dialog-close]="taskForm.value">update</button>
+   <!--   <button class="update-button" routerLink="/" routerLinkActive="active"  [mat-dialog-close]="taskForm.value" [disabled]="taskForm.invalid"><mat-icon>update</mat-icon></ -->button>
     
     </div>
   </div>

@@ -21,7 +21,7 @@ export class DeleteTodoController {
       tasks.splice(taskIndex, 1);
       fs.writeFileSync(this.tasksFilePath, JSON.stringify(tasks, null, 2), 'utf8');
 
-      response.status(HttpStatus.OK).send('Task deleted successfully');
+      response.status(HttpStatus.OK).send({message: 'Task deleted successfully'});
     } catch (error) {
       if (error instanceof NotFoundException) {
         response.status(HttpStatus.NOT_FOUND).send(error.message);

@@ -19,10 +19,10 @@ export class AddTodoController {
       fs.writeFileSync(this.tasksFilePath, JSON.stringify(tasks, null, 2), 'utf8');
 
       
-      response.status(201).send('Task added successfully');
+      response.status(201).send({message: 'Task added successfully'});
     } catch (error) {
       console.error('Error adding task:', error);
       response.status(500).send('Internal Server Error');
-    }
+   }
   }
 }
