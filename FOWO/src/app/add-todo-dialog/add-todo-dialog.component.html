@@ -1,15 +1,17 @@
-<h1 mat-dialog-title>Add New Todo</h1>
-<div mat-dialog-content>
-  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <input matInput placeholder="Title" formControlName="title">
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput placeholder="Description" formControlName="description"></textarea>
-    </mat-form-field>
-  </form>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button routerLink="/" routerLinkActive="active" (click)="onSubmit()">Add</button>
+<div class="update-task-dialog">
+  <h1 class="mat-dialog-title">Add Task</h1>
+  <div class="mat-dialog-content">
+    <form [formGroup]="taskForm">
+      <mat-form-field class="task-title">
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+      <mat-form-field class="task-description">
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="mat-dialog-actions">
+    <button class="cancel-button" (click)="onCancel()">Cancel</button>
+    <button mat-button routerLink="/" routerLinkActive="active"  [mat-dialog-close]="taskForm.value"><mat-icon>add</mat-icon></button>
+  </div>
 </div>

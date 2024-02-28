@@ -1,39 +1,38 @@
 .update-task-dialog {
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  
-  .mat-dialog-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .mat-dialog-content {
-    margin-bottom: 20px;
-  }
-  
-  .task-title, .task-description {
-    width: 100%;
-    background-color: #fff; /* Set background color to white */
-  }
-  
-  .mat-dialog-actions {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .cancel-button {
-    margin-right: 10px;
-  }
-  
-  .update-button {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .update-button:hover {
-    background-color: #0056b3;
-  }
-  
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.mat-dialog-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.mat-dialog-content {
+  margin-bottom: 20px;
+}
+
+.task-title, .task-description {
+  width: 100%;
+  background-color: #fff; /* Set background color to white */
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancel-button {
+  margin-right: 10px;
+}
+
+.update-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.update-button:hover {
+  background-color: #0056b3;
+}

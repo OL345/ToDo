@@ -6,7 +6,6 @@ import { ContentComponent } from './content/content.component';
 import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
-  {path: 'add', component: AddComponent},
   {path: '', component: ContentComponent},   
 ];
 
