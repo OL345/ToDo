@@ -22,6 +22,7 @@ export class BoxComponent {
   @Output() updatedData = new EventEmitter();
   @Output() deletedData = new EventEmitter();
   @Output() markedData = new EventEmitter();
+  @Output() markedData2 = new EventEmitter();
 
   constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService, private snackBar: MatSnackBar,) {}
   
@@ -88,5 +89,18 @@ export class BoxComponent {
     );
   }
   
+  mark_as_todo(taskId: number): void {
+    const url = `http://localhost:3000/mark-as-todo/${taskId}`;
+    this.http.put<void>(url, {}).subscribe(
+      () => {
+        console.log(`Task with ID ${taskId} marked as todo successfully.`);
+        // Optionally, perform any action after marking the task as done
+        this.markedData2.emit();
+      },
+      error => {
+        console.error('Error marking task as done:', error);
+      }
+    );
+  }
   
 }
