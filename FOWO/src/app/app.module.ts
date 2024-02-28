@@ -24,6 +24,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateTaskDialogComponent } from './update-task-dialog/update-task-dialog.component';
 import { DeleteTaskDialogComponent } from './delete-task-dialog/delete-task-dialog.component';
+import { AddTodoDialogComponent } from './add-todo-dialog/add-todo-dialog.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { DeleteTaskDialogComponent } from './delete-task-dialog/delete-task-dial
     DetailComponent,
     UpdateTaskDialogComponent,
     DeleteTaskDialogComponent,
+    AddTodoDialogComponent,
   ],
   imports: [
     BrowserModule,

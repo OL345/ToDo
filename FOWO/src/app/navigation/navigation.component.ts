@@ -1,7 +1,11 @@
-import { FocusKeyManager } from '@angular/cdk/a11y';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { termin } from '../interfaces/termin';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import { DataService } from '../services/data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AddTodoDialogComponent } from '../add-todo-dialog/add-todo-dialog.component';
 
 @Component({
   selector: 'app-navigation',
@@ -11,8 +15,13 @@ import { DataService } from '../services/data.service';
 
 export class NavigationComponent {
   data: termin[] = [];
-  constructor(private _data : DataService) {
+  
+  @Output() addTaskUpdate = new EventEmitter();
+
+  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService, private snackBar: MatSnackBar,) {
     this.data = this._data.getData();
 
   }
+
+  
 }
