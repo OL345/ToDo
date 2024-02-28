@@ -25,6 +25,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateTaskDialogComponent } from './update-task-dialog/update-task-dialog.component';
 import { DeleteTaskDialogComponent } from './delete-task-dialog/delete-task-dialog.component';
 import { AddTodoDialogComponent } from './add-todo-dialog/add-todo-dialog.component';
+import {MatTooltipModule} from '@angular/material/tooltip'; 
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { AddTodoDialogComponent } from './add-todo-dialog/add-todo-dialog.compon
     ReactiveFormsModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatTooltipModule,
   ],
   providers: [
     // No need to provide anything here

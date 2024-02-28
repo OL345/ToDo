@@ -8,15 +8,15 @@
           <p>{{ input_data.description }}</p>
         </li>
       </ul>
-      <button *ngIf="!input_data.done" class="button mark_as_done" (click)="mark_as_done(input_data.id)">
+      <button matTooltip="Task Done" *ngIf="!input_data.done" class="button mark_as_done" (click)="mark_as_done(input_data.id)">
         <mat-icon>done</mat-icon>
       </button>
-      <button *ngIf="input_data.done" class="button mark_as_todo" (click)="mark_as_todo(input_data.id)" >
+      <button matTooltip="Task isn´t done" *ngIf="input_data.done" class="button mark_as_todo" (click)="mark_as_todo(input_data.id)" >
         <mat-icon>close</mat-icon>
       </button>
       
-      <button class="button edit" (click) = "openUpdateDialog()" routerLinkActive="active"><mat-icon>edit</mat-icon></button>
-      <button class="button delete" (click)="openDeleteDialog()" routerLink="/" routerLinkActive="active"><mat-icon>delete</mat-icon></button>
+      <button class="button edit" (click) = "openUpdateDialog()" matTooltip="Edit Task" routerLinkActive="active"><mat-icon>edit</mat-icon></button>
+      <button class="button delete" (click)="openDeleteDialog()" matTooltip="Delete Task" routerLink="/" routerLinkActive="active"><mat-icon>delete</mat-icon></button>
     </div>
   </div>
   
