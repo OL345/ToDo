@@ -29,8 +29,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CdkAccordionModule } from '@angular/cdk/accordion'; 
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTableModule} from '@angular/material/table';
+import {  MatMenuModule} from '@angular/material/menu';
+import {  MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import {MatTableModule} from '@angular/material/table';
     CdkAccordionModule,
     MatMenuModule,
     MatTableModule,
-
+    BrowserAnimationsModule,
   ],
   providers: [
     // No need to provide anything here
