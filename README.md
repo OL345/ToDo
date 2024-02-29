@@ -19,7 +19,12 @@ This app allows you to create Tasks. The Frontend is Angular and the backend is 
 ## Mark ToDo
   - Marks task as Todo
   
+## View as List
+  - Lets you view your Tasks as a List
+
+## View as Table
+  - Lest you view your Tasks as a Table
+
 ## Start Server
   - start Backend with npm start run on http://localhost:3000/
   - start Frontend with ng serve on http://localhost:4200/
-
