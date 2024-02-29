@@ -14,7 +14,7 @@ export class DataService {
   }
 
   public fetchData2(): Observable<termin[]> {
-    return this.httpClient.get<termin[]>('http://localhost:3000/tasks')
+    return this.httpClient.get<termin[]>('api/tasks')
   }
 
   getData(): termin[] {
@@ -26,7 +26,7 @@ export class DataService {
   }
 
   deleteTask(taskId: number): Observable<any> {
-    const url = `http://localhost:3000/delete-todo/${taskId}`;
+    const url = `api/delete-todo/${taskId}`;
     return this.httpClient.delete(url);
   }
   

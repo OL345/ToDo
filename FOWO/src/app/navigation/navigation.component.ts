@@ -4,8 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DataService } from '../services/data.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -15,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class NavigationComponent {
   data: termin[] = [];
 
-  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService, private snackBar: MatSnackBar,) {
+  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService) {
     this.data = this._data.getData();
   }  
 }

@@ -19,3 +19,8 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   
+  <div class="container">
+
+    <button matTooltip="Add Task" class="floating-button" routerLink="/table" routerLinkActive="active" (click)="openAddDialog()"><mat-icon>add</mat-icon></button>  
+  
+  </div>

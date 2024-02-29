@@ -3,7 +3,6 @@
         <cdk-accordion-item #accordionItem="cdkAccordionItem" class="example-accordion-item" role="button" tabindex="0" [attr.id]="'accordion-header-' + index" [attr.aria-expanded]="accordionItem.expanded" [attr.aria-controls]="'accordion-body-' + index">
             <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
                 {{ this.item.title }}
-                
                 <span class="example-accordion-item-description">
                     Click to {{ accordionItem.expanded ? 'close' : 'open' }}
                 </span>
@@ -16,4 +15,6 @@
     }
 </cdk-accordion>
 
-  
+<div class="container">
+    <button matTooltip="Add Task" class="floating-button" routerLink="/list" routerLinkActive="active" (click)="openAddDialog()"><mat-icon>add</mat-icon></button>  
+</div>

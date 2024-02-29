@@ -1,4 +1,4 @@
-div{
+div {
 border: 20px red;
 border-radius: 5px;
 color: black;
@@ -13,11 +13,11 @@ display: inline-block;
     position: relative;
     width: 100%;
     height: 50px; /* Set the height of the container */
+
 }
   
 .floating-button {
     position: absolute;
-    bottom: 20px; /* Adjust as needed */
-    right: 50px; /* Adjust as needed */
+    right: 50%; /* Adjust as needed */
 }
   

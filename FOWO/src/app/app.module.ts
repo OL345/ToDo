@@ -30,8 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CdkAccordionModule } from '@angular/cdk/accordion'; 
 import {MatMenuModule} from '@angular/material/menu';
-import {MatTableModule} from '@angular/material/table'; 
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -67,7 +66,6 @@ import {MatTableModule} from '@angular/material/table';
     CdkAccordionModule,
     MatMenuModule,
     MatTableModule,
-    
 
   ],
   providers: [

@@ -2,16 +2,17 @@
     max-width: 400px;
     padding: 20px;
     border-radius: 5px;
-    background-color: #fff;
   }
   
   .mat-dialog-title {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #fff;
   }
   
   .mat-dialog-content {
     margin-bottom: 20px;
+    color: #fff;
   }
   
   .mat-dialog-actions {
@@ -25,7 +26,6 @@
   
   .delete-button {
     background-color: #dc3545;
-    color: #fff;
   }
   
   .delete-button:hover {

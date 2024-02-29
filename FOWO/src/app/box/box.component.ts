@@ -6,9 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { UpdateTaskDialogComponent } from '../update-task-dialog/update-task-dialog.component';
 import { DataService } from '../services/data.service';
 import { DeleteTaskDialogComponent } from '../delete-task-dialog/delete-task-dialog.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { AddTodoDialogComponent } from '../add-todo-dialog/add-todo-dialog.component';
-
 
 @Component({
   selector: 'app-box',
@@ -16,6 +13,7 @@ import { AddTodoDialogComponent } from '../add-todo-dialog/add-todo-dialog.compo
   styleUrls: ['./box.component.css']
 })
 export class BoxComponent {
+
   @Input() input_data!: termin;
   tasks: termin[] = [];
 
@@ -24,7 +22,7 @@ export class BoxComponent {
   @Output() markedData = new EventEmitter();
   @Output() markedData2 = new EventEmitter();
 
-  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService, private snackBar: MatSnackBar,) {}
+  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService) {}
   
   openUpdateDialog(): void {
     const dialogRef = this.dialog.open(UpdateTaskDialogComponent, {
@@ -41,7 +39,7 @@ export class BoxComponent {
           done: false,
         };
 
-        this.http.put(`http://localhost:3000/edit/${this.input_data.id}`, updatedTask)
+        this.http.put(`api/edit/${this.input_data.id}`, updatedTask)
           .subscribe(
             () => {
               console.log(`Task with ID ${this.input_data.id} updated successfully.`);
@@ -61,7 +59,7 @@ export class BoxComponent {
   
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.http.delete(`http://localhost:3000/delete-todo/${this.input_data.id}`).subscribe(
+        this.http.delete(`api/delete-todo/${this.input_data.id}`).subscribe(
           () => {
             console.log({message: `Task with ID ${this.input_data.id} deleted successfully.`});
             // Emit event after successful deletion
@@ -76,7 +74,7 @@ export class BoxComponent {
   }  
 
   mark_as_done(taskId: number): void {
-    const url = `http://localhost:3000/mark-as-done/${taskId}`;
+    const url = `api/mark-as-done/${taskId}`;
     this.http.put<void>(url, {}).subscribe(
       () => {
         console.log(`Task with ID ${taskId} marked as done successfully.`);
@@ -90,7 +88,7 @@ export class BoxComponent {
   }
   
   mark_as_todo(taskId: number): void {
-    const url = `http://localhost:3000/mark-as-todo/${taskId}`;
+    const url = `api/mark-as-todo/${taskId}`;
     this.http.put<void>(url, {}).subscribe(
       () => {
         console.log(`Task with ID ${taskId} marked as todo successfully.`);

@@ -6,7 +6,6 @@ import { AddTodoDialogComponent } from '../add-todo-dialog/add-todo-dialog.compo
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-content',
@@ -18,7 +17,7 @@ export class ContentComponent {
 
   public termine$: Observable<termin[]>;
 
-  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService, private snackBar: MatSnackBar,) {
+  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService) {
     this.termine = this._data.getData();
 
     this.termine$ =_data.fetchData2();
@@ -40,7 +39,7 @@ export class ContentComponent {
         console.log(titleValue, descriptionValue)
     const newTodo = { title: titleValue, description: descriptionValue, done: false };
       
-    this.http.post<any>('http://localhost:3000/add-todo', newTodo).subscribe(
+    this.http.post<any>('api/add-todo', newTodo).subscribe(
       (response) => {
         console.log('New Todo added successfully!', response);
         this.fetchData();

@@ -37,7 +37,7 @@ export class DetailComponent {
     
     console.log(this.editTodo.id);
 
-    this.http.put(`http://localhost:3000/edit/${this.editTodo.id}`, updatedTask)
+    this.http.put(`api/edit/${this.editTodo.id}`, updatedTask)
       .subscribe(
         () => {
           console.log(`Task with ID ${this.editTodo.id} updated successfully.`);

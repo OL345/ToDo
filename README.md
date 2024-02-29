@@ -23,7 +23,7 @@ This app allows you to create Tasks. The Frontend is Angular and the backend is 
   - Lets you view your Tasks as a List
 
 ## View as Table
-  - Lest you view your Tasks as a Table
+  - Lets you view your Tasks as a Table
 
 ## Start Server
   - start Backend with npm start run on http://localhost:3000/
