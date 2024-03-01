@@ -1,22 +1,22 @@
 <table mat-table [dataSource]="termine$" class="mat-elevation-z8">
 
     <ng-container matColumnDef="ID">
-      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <b><th mat-header-cell *matHeaderCellDef> ID </th></b>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
   
     <ng-container matColumnDef="Title">
-      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <b><th mat-header-cell *matHeaderCellDef> Title </th></b>
       <td mat-cell *matCellDef="let element"> {{element.title}} </td>
     </ng-container>
   
     <ng-container matColumnDef="Description">
-      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <b><th mat-header-cell *matHeaderCellDef> Description </th></b>
       <td mat-cell *matCellDef="let element"> {{element.description}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Done">
-      <th mat-header-cell *matHeaderCellDef> Done </th>
+      <b><th mat-header-cell *matHeaderCellDef> Done </th></b>
       <td mat-cell *matCellDef="let element"> {{element.done}} </td>
     </ng-container>
   
