@@ -32,6 +32,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import {  MatMenuModule} from '@angular/material/menu';
 import {  MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [
     // No need to provide anything here
+  
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

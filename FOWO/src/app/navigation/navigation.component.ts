@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DataService } from '../services/data.service';
+
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -16,4 +17,5 @@ export class NavigationComponent {
   constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService) {
     this.data = this._data.getData();
   }  
+
 }

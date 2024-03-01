@@ -2,7 +2,6 @@
     max-width: 400px;
     padding: 20px;
     border-radius: 5px;
-    background-color: #fff;
   }
   
   .mat-dialog-title {
@@ -16,7 +15,6 @@
   
   .task-title, .task-description {
     width: 100%;
-    background-color: #fff; /* Set background color to white */
   }
   
   .mat-dialog-actions {

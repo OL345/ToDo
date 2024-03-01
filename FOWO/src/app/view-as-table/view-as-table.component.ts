@@ -15,7 +15,7 @@ import { AddTodoDialogComponent } from '../add-todo-dialog/add-todo-dialog.compo
 export class ViewAsTableComponent {
   termine$: Observable<termin[]>;
 
-  displayedColumns: string[] = ['ID', 'Title', 'Description'];
+  displayedColumns: string[] = ['ID', 'Title', 'Description', 'Done'];
 
   constructor(private http: HttpClient, private router: Router, public dialog: MatDialog, private _data: DataService) {
     this.termine$ = this._data.fetchData2();
